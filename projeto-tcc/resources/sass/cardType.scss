@@ -1,0 +1,95 @@
+.cardType {
+    margin-top: 25px;
+
+    &__container {
+        border-radius: 8px;
+        margin-bottom: 16px;
+        box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    &__img {
+        height: 200px;
+        border-radius: 4px 4px 0 0;
+        position: relative;
+
+        &--cuidador {
+            background: url(/images/conheca-o-curso-cuidador-de-idosos.png);
+        }
+
+        &--casa {
+            background: url(/images/older-person-housing-fac.png);
+        }
+
+        &--cuidador,
+        &--casa {
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+    }
+
+    &__text {
+        padding: 0 25px 25px;
+    }
+
+    &__title {
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Lato', sans-serif;
+        font-size: 18px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        color: $grey;
+        display: flex;
+        align-items: center;
+
+        &--casa,
+        &--cuidador {
+            &:before {
+                content: "";
+                display: block;
+                height: 24px;
+                margin-right: 8px;
+            }
+        }
+
+        &--cuidador {
+            &:before {
+                background: url(/images/doctor.png);
+                background-size: 100%;
+                width: 20px;
+            }
+        }
+
+        &--casa {
+            &:before {
+                background: url(/images/house.png);
+                background-size: 100%;
+                width: 22px;
+            }
+        }
+    }
+
+    &__info {
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+        color: $grey;
+        margin-bottom: 15px;
+    }
+
+    &__btn {
+        max-width: 300px;
+        width: 100%;
+
+        padding: 15px 0;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Lato', sans-serif;
+        text-align: center;
+        display: block;
+        background: $blue;
+        color: $white;
+        border-radius: 4px;
+    }
+}

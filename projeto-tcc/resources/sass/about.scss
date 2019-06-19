@@ -1,0 +1,26 @@
+.about {
+    &__img {
+        height: 180px;
+        position: relative;
+
+        &--historia {
+            background: url(/images/nossa-historia-img.png);
+        }
+
+        &--diferencial {
+            background: url(/images/diferencial-img.png);
+        }
+
+
+    }
+
+    &__info {
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+        line-height: 1.2;
+
+        color: $grey;
+        padding-top: 25px;
+    }
+
+}

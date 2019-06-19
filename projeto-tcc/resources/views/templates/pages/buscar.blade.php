@@ -1,0 +1,1 @@
+<a href="{{ route('article', array($article->link)) }}">
