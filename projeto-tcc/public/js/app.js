@@ -36908,6 +36908,18 @@ $(document).ready(function () {
     });
   }
 
+  function format() {
+    var valorText = document.querySelector(".dashboard__box-call-number");
+
+    if (valorText) {
+      var valor = valorText.innerText;
+      var number = valor.slice(0, 11);
+      var formatted = number.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
+      valorText.innerText = formatted;
+    }
+  }
+
+  format();
   hamburguerAction();
   smoothScrollTop();
   loginBox();

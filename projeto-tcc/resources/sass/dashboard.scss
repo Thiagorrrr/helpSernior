@@ -1,0 +1,177 @@
+.dashboard {
+    background: #ECEFF1;
+    min-height: 80vh;
+
+    &__wrapper-user {
+        display: flex;
+        padding-bottom: 20px;
+    }
+
+    &__img {
+        margin: 15px 0;
+        height: 80px;
+        width: 80px;
+        border: 1px solid #F2F2F2;
+        border-radius: 100%;
+    }
+
+    &__info {
+        width: 100%;
+        margin-left: 20px;
+        padding-top: 20px;
+    }
+
+    &__name {
+
+        text-transform: capitalize;
+        font-weight: bold;
+        font-family: 'Lato', sans-serif;
+        font-size: 18px;
+
+        color: $blue;
+        display: flex;
+        align-items: center;
+
+    }
+
+    &__funcao {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+        margin: 8px 0;
+
+
+        &--casa,
+        &--cuidador {
+            &::after {
+                content: "";
+                display: block;
+                height: 24px;
+                margin-left: 8px;
+            }
+        }
+
+        &--cuidador {
+            &:after {
+                background: url(/images/doctor.png);
+                background-size: 100%;
+                width: 20px;
+            }
+        }
+
+        &--casa {
+            &:after {
+                background: url(/images/house.png);
+                background-size: 100%;
+                width: 22px;
+            }
+        }
+    }
+
+    &__type {
+        font-weight: bold;
+        font-family: "Lato", sans-serif;
+        font-size: 16px;
+        text-align: left;
+        line-height: 1.2;
+        padding-bottom: 8px;
+        display: inherit;
+        color: $grey;
+    }
+
+    &__moeda,
+    &__preco,
+    &__cobranca {
+        font-family: 'Lato', sans-serif;
+        font-size: 24px;
+        line-height: 1.1;
+        text-transform: capitalize;
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__cobranca {
+        font-weight: bold;
+        color: #666;
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    &__moeda {
+        font-weight: bold;
+        color: #444;
+        font-size: 16px;
+    }
+
+    &__preco {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    &__box-call {
+        background: $white;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+
+    }
+
+    &__box-call-btn {
+
+        max-width: 300px;
+        width: 100px;
+
+        padding: 15px 0;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Lato', sans-serif;
+        text-align: center;
+        display: block;
+        background: $blue;
+        color: $white;
+        border-radius: 4px;
+
+    }
+
+    &__box-call-number {
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 16px;
+        font-family: 'Lato', sans-serif;
+    }
+
+    &__box-description {
+        margin-top: 16px;
+        background: #fff;
+        padding: 20px;
+    }
+
+    &__paragrafo {
+        display: block;
+        font-family: 'Lato', sans-serif;
+        white-space: pre-wrap;
+
+        background: $white;
+    }
+
+    &__description {
+        color: $blue;
+        font-family: 'Lato', sans-serif;
+        font-size: 20px;
+        margin-bottom: 8px;
+        display: inline-block;
+    }
+
+    &__paragrafo {
+        padding-bottom: 8px;
+        overflow: hidden;
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+    }
+}

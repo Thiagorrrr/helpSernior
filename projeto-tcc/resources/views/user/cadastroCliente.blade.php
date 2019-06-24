@@ -1,7 +1,7 @@
 @include('templates.includes.header')
 @include('templates.componentes.highlights', [ 'class'=> 'highlights--blue highlights--about', 'classSub'=> 'highlights__subtitle--cadastro' ,'title'=> 'Crie sua conta', 'subTitle'=>'Cliente'])
 
-{!! Form::open([ 'route' => 'user.store','method' => 'post', 'class' => 'form-padrao hs-container']) !!}
+{!! Form::open([ 'route' => 'user.store','method' => 'post', 'class' => 'form-padrao hs-container', 'files' => true]) !!}
     @include('templates.formulario.input', [ 'class'=> 'form-padrao__label', 'input' => 'cpf', 'attributes' => ['placeholder' => 'CPF', 'class'=> 'form-padrao__input' ]])
     @include('templates.formulario.input', [ 'class'=> 'form-padrao__label', 'input' => 'name', 'attributes' => ['placeholder' => 'Nome', 'class'=> 'form-padrao__input' ]])
     @include('templates.formulario.input', [ 'class'=> 'form-padrao__label', 'input' => 'phone', 'attributes' => ['placeholder' => 'Telefone', 'class'=> 'form-padrao__input']])
@@ -10,9 +10,9 @@
 
     @include('templates.componentes.highlights', [ 'class'=> 'highlights--blue highlights--about-items', 'classSub'=> 'highlights__subtitle--cadastro' ,'title'=> '', 'subTitle'=>'Dados pessoais'])
 
-    @include('templates.formulario.radio', [ 'class'=> 'form-padrao__label', 'input' => 'gender', 'value' => 'masculino', 'placeholder' => 'Masculino' ,'tipo'=>'sexo'])
-    @include('templates.formulario.radio', [ 'class'=> 'form-padrao__label', 'input' => 'gender', 'value' => 'feminino','placeholder' => 'Feminino'])
-    @include('templates.formulario.input', [ 'class'=> 'form-padrao__label', 'input' => 'nascimento', 'attributes' => ['placeholder' => 'Nascimento', 'class'=> 'form-padrao__input no-margin-bottom']])
+    @include('templates.formulario.radio', [ 'class'=> 'form-padrao__label', 'input' => 'gender', 'value' => 'M', 'placeholder' => 'Masculino' ,'tipo'=>'sexo'])
+    @include('templates.formulario.radio', [ 'class'=> 'form-padrao__label', 'input' => 'gender', 'value' => 'F','placeholder' => 'Feminino'])
+    @include('templates.formulario.inputDate', [ 'class'=> 'form-padrao__label', 'input' => 'birth', 'attributes' => ['placeholder' => 'Nascimento', 'class'=> 'form-padrao__input no-margin-bottom']])
 
 
 
@@ -30,11 +30,11 @@
 
     @include('templates.formulario.input', [ 'class'=> 'form-padrao__label', 'input' => 'titular', 'attributes' => ['placeholder' => 'Nome titular', 'class'=> 'form-padrao__input' ]])
     @include('templates.formulario.input', [ 'class'=> 'form-padrao__label', 'input' => 'ncartao', 'attributes' => ['placeholder' => 'Numero do cartão de crédito', 'class'=> 'form-padrao__input' ]])
-    @include('templates.formulario.input', [ 'class'=> 'form-padrao__label', 'input' => 'dtvalidade', 'attributes' => ['placeholder' => 'Data de validade', 'class'=> 'form-padrao__input no-margin-bottom' ]])
+    @include('templates.formulario.input', [ 'class'=> 'form-padrao__label', 'input' => 'dtvalidade', 'attributes' => ['placeholder' => 'Data de validade 01/02', 'class'=> 'form-padrao__input no-margin-bottom' ]])
 
 
-    @include('templates.formulario.select', [ 'class'=> 'form-padrao__label', 'setors' => [' '=>'Escolher bandeira' ,'Visa'=>'Visa', 'Mastercard'=>'Mastercard', 'Elo'=>'Elo', 'AmericanExpress'=>'American Express', 'DinersClube'=>'Diners Clube', 'Hipercard'=>'Hipercard' ], 'attributes' => ['placeholder' => 'Data de validade', 'class'=> 'form-padrao__input' ]])
-    @include('templates.formulario.input', [ 'class'=> 'form-padrao__label', 'input' => 'securyCode', 'attributes' => ['placeholder' => 'Código de segurança', 'class'=> 'form-padrao__input no-margin-bottom' ]])
+    @include('templates.formulario.select', [ 'name'=>'bandeira', 'class'=> 'form-padrao__label', 'text'=>'Tipo de cartão de Crédito', 'setors' => [' '=>'Escolher bandeira' ,'Visa'=>'Visa', 'Mastercard'=>'Mastercard', 'Elo'=>'Elo', 'AmericanExpress'=>'American Express', 'DinersClube'=>'Diners Clube', 'Hipercard'=>'Hipercard' ], 'attributes' => ['placeholder' => 'Data de validade', 'class'=> 'form-padrao__input' ]])
+    @include('templates.formulario.input', [ 'class'=> 'form-padrao__label', 'input' => 'securycode', 'attributes' => ['placeholder' => 'Código de segurança', 'class'=> 'form-padrao__input no-margin-bottom' ]])
 
 
 

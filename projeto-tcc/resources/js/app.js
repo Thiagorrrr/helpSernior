@@ -76,6 +76,21 @@ $(document).ready(function () {
         headerUser.addEventListener("click", () => boxLogin.classList.toggle("header__login-box--active")
         );
     }
+
+    function format() {
+        let valorText = document.querySelector(".dashboard__box-call-number");
+
+        if (valorText) {
+
+            let valor = valorText.innerText;
+            let number = valor.slice(0, 11);
+
+            var formatted = number.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
+            valorText.innerText = formatted;
+
+        }
+    }
+    format();
     hamburguerAction();
     smoothScrollTop();
     loginBox();

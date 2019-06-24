@@ -144,6 +144,14 @@ table {
   border-spacing: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
 .hs-container {
   padding-right: 20px;
   padding-left: 20px;
@@ -386,6 +394,12 @@ table {
   overflow: visible;
 }
 
+@media (min-width: 600px) {
+  .header__login-box {
+    right: 60px;
+  }
+}
+
 .header__login-box--active {
   display: flex;
   z-index: 2;
@@ -488,11 +502,19 @@ table {
   position: relative;
   background: url(/images/banner-img.png);
   background-repeat: no-repeat;
-  height: 250px;
+  height: 220px;
+  padding-bottom: 30px;
   background-size: cover;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+@media (min-width: 600px) {
+  .banner {
+    height: 450px;
+    padding-bottom: 0;
+  }
 }
 
 .banner::before {
@@ -532,6 +554,7 @@ table {
   font-weight: bold;
   font-family: "Lato", sans-serif;
   color: #fff;
+  text-decoration: none;
   font-size: 20px;
   background: #FFA726;
   display: inline-block;
@@ -546,10 +569,39 @@ table {
   margin-top: 25px;
 }
 
+@media (min-width: 600px) {
+  .cardType {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .cardType__container {
   border-radius: 8px;
   margin-bottom: 16px;
   box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 600px) {
+  .cardType__container {
+    width: 50%;
+    max-width: 400px;
+    transition: -webkit-transform ease-in-out 200ms;
+    transition: transform ease-in-out 200ms;
+    transition: transform ease-in-out 200ms, -webkit-transform ease-in-out 200ms;
+  }
+
+  .cardType__container:nth-child(odd) {
+    margin-right: 20px;
+  }
+
+  .cardType__container:hover {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    transition: -webkit-transform ease-in-out 200ms;
+    transition: transform ease-in-out 200ms;
+    transition: transform ease-in-out 200ms, -webkit-transform ease-in-out 200ms;
+  }
 }
 
 .cardType__img {
@@ -613,6 +665,7 @@ table {
   font-size: 16px;
   color: #777777;
   margin-bottom: 15px;
+  min-height: 32px;
 }
 
 .cardType__btn {
@@ -630,17 +683,166 @@ table {
   border-radius: 4px;
 }
 
+.card {
+  margin-bottom: 15px;
+}
+
+@media (min-width: 600px) {
+  .card {
+    margin-bottom: 30px;
+    max-width: 345px;
+    transition: -webkit-transform ease-in-out 200ms;
+    transition: transform ease-in-out 200ms;
+    transition: transform ease-in-out 200ms, -webkit-transform ease-in-out 200ms;
+  }
+
+  .card:hover {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    transition: -webkit-transform ease-in-out 200ms;
+    transition: transform ease-in-out 200ms;
+    transition: transform ease-in-out 200ms, -webkit-transform ease-in-out 200ms;
+  }
+}
+
+.card__wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.15);
+}
+
+.card__funcao {
+  text-align: center;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #777777;
+  display: flex;
+  align-items: center;
+}
+
+.card__funcao--casa:before,
+.card__funcao--cuidador:before {
+  content: "";
+  display: block;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.card__funcao--cuidador:before {
+  background: url(/images/doctor.png);
+  background-size: 100%;
+  width: 20px;
+}
+
+.card__funcao--casa:before {
+  background: url(/images/house.png);
+  background-size: 100%;
+  width: 22px;
+}
+
+.card__img {
+  margin: 15px 0;
+  height: 132px;
+  width: 132px;
+  border: 1px solid #F2F2F2;
+  border-radius: 100%;
+}
+
+.card__moeda,
+.card__preco,
+.card__cobranca,
+.card__local,
+.card__nome {
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  line-height: 1.1;
+  text-transform: capitalize;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__local {
+  font-size: 16px;
+  color: #777;
+  margin: 5px 0;
+}
+
+.card__cobranca {
+  font-weight: bold;
+  color: #666;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.card__moeda {
+  font-weight: bold;
+  color: #444;
+  font-size: 16px;
+}
+
+.card__preco {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.card__btn {
+  max-width: 300px;
+  width: 100%;
+  padding: 15px 0;
+  margin: 0 auto;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 15px;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  display: block;
+  background: #1E88E5;
+  color: #fff;
+  border-radius: 4px;
+}
+
 .about__img {
   height: 180px;
   position: relative;
 }
 
+@media (min-width: 600px) {
+  .about__img {
+    height: 300px;
+  }
+}
+
 .about__img--historia {
   background: url(/images/nossa-historia-img.png);
+  background-repeat: no-repeat;
 }
 
 .about__img--diferencial {
   background: url(/images/diferencial-img.png);
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 600px) {
+  .about__img--historia {
+    background: url(/images/nossa-historia-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .about__img--diferencial {
+    background: url(/images/diferencial-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
 }
 
 .about__info {
@@ -680,6 +882,12 @@ table {
   padding: 25px 0;
 }
 
+@media (min-width: 600px) {
+  .highlights--about-items {
+    padding: 40px 0;
+  }
+}
+
 .highlights--about-items .highlights__title {
   display: none;
 }
@@ -704,14 +912,33 @@ table {
   font-size: 32px;
 }
 
+@media (min-width: 600px) {
+  .highlights__title {
+    font-size: 40px;
+  }
+}
+
 .highlights__subtitle {
   font-size: 16px;
   color: #777777;
 }
 
+@media (min-width: 600px) {
+  .highlights__subtitle {
+    font-size: 18px;
+  }
+}
+
 .highlights__subtitle--fornecedor,
 .highlights__subtitle--cadastro {
   font-size: 20px;
+}
+
+@media (min-width: 600px) {
+  .highlights__subtitle--fornecedor,
+  .highlights__subtitle--cadastro {
+    font-size: 24px;
+  }
 }
 
 .highlights__subtitle--cadastro {
@@ -733,7 +960,7 @@ table {
   padding-left: 15px;
   margin-bottom: 8px;
   border-radius: 4px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   border: 1px solid rgba(112, 112, 112, 0.3);
 }
@@ -741,7 +968,7 @@ table {
 .login__cadastrar-btn,
 .login__submit {
   width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 26px;
   text-align: center;
   background: #1E88E5;
@@ -759,7 +986,7 @@ table {
 }
 
 .login__cadastrar-info {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 14px;
   text-align: center;
   color: #1E88E5;
@@ -771,6 +998,13 @@ table {
   display: inline-block;
   text-transform: initial;
   text-decoration: none;
+}
+
+@media (min-width: 600px) {
+  .cadastro__container {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .cadastro__type {
@@ -795,6 +1029,14 @@ table {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+}
+
+@media (min-width: 600px) {
+  .cadastro__cards {
+    max-width: 400px;
+    padding: 50px;
+    margin-top: 0;
+  }
 }
 
 .cadastro__img {
@@ -842,6 +1084,12 @@ table {
   padding-bottom: 40px;
 }
 
+@media (min-width: 600px) {
+  .form-padrao {
+    max-width: 768px;
+  }
+}
+
 .form-padrao__input {
   width: 100%;
   height: 60px;
@@ -851,6 +1099,29 @@ table {
   font-family: "Lato", sans-serif;
   font-size: 16px;
   border: 1px solid rgba(112, 112, 112, 0.3);
+}
+
+.form-padrao__input-date-text {
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  margin: 15px 0;
+}
+
+.form-padrao__input-date .form-padrao__input {
+  background: #fff;
+}
+
+.form-padrao__text-area-info {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #1E88E5;
+  margin-bottom: 25px;
+}
+
+.form-padrao__text-area {
+  padding-top: 20px;
+  min-height: 255px;
 }
 
 .form-padrao__submit input {
@@ -967,8 +1238,15 @@ table {
 
 .form-padrao__select {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 25px 0;
+}
+
+@media (min-width: 600px) {
+  .form-padrao__select {
+    width: 40%;
+  }
 }
 
 .form-padrao__select-input {
@@ -988,14 +1266,13 @@ table {
 }
 
 .form-padrao__file input {
-  border: 1px solid #1E88E5;
   font-family: "Lato", sans-serif;
   font-size: 14px;
   color: #1E88E5;
-  padding: 12px 0 12px 10px;
+  padding: 12px 0 12px 0;
   background: #fff;
   border-radius: 4px;
-  width: 135px;
+  letter-spacing: -0.8px;
 }
 
 .form-padrao__file-text {
@@ -1003,6 +1280,234 @@ table {
   padding-right: 20px;
   margin-bottom: 16px;
   font-family: "Lato", sans-serif;
+}
+
+.form-buscar__content {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 600px) {
+  .form-buscar__content {
+    width: 50%;
+    margin: 0 auto 40px;
+  }
+}
+
+.form-buscar__input {
+  color: #020202;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  border: 1px solid #C3C3C3;
+  border-radius: 4px;
+  width: 100%;
+  padding: 20px 20px;
+}
+
+.form-buscar__btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-color: #c3c3c3;
+  background-color: transparent;
+}
+
+.form-buscar__search {
+  height: 25px;
+  content: "";
+  display: block;
+  width: 25px;
+  background: url(/images/lupa.png);
+  background-size: 100%;
+}
+
+.buscar {
+  overflow: scroll;
+  margin-right: auto;
+  max-height: 100vh;
+  min-height: 70vh;
+}
+
+@media (min-width: 600px) {
+  .buscar__container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+.buscar__mensagem {
+  color: #e3342f;
+  text-align: center;
+  display: block;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+}
+
+.dashboard {
+  background: #ECEFF1;
+  min-height: 80vh;
+}
+
+.dashboard__wrapper-user {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.dashboard__img {
+  margin: 15px 0;
+  height: 80px;
+  width: 80px;
+  border: 1px solid #F2F2F2;
+  border-radius: 100%;
+}
+
+.dashboard__info {
+  width: 100%;
+  margin-left: 20px;
+  padding-top: 20px;
+}
+
+.dashboard__name {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #1E88E5;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard__funcao {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.dashboard__funcao--casa::after,
+.dashboard__funcao--cuidador::after {
+  content: "";
+  display: block;
+  height: 24px;
+  margin-left: 8px;
+}
+
+.dashboard__funcao--cuidador:after {
+  background: url(/images/doctor.png);
+  background-size: 100%;
+  width: 20px;
+}
+
+.dashboard__funcao--casa:after {
+  background: url(/images/house.png);
+  background-size: 100%;
+  width: 22px;
+}
+
+.dashboard__type {
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  text-align: left;
+  line-height: 1.2;
+  padding-bottom: 8px;
+  display: inherit;
+  color: #777777;
+}
+
+.dashboard__moeda,
+.dashboard__preco,
+.dashboard__cobranca {
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  line-height: 1.1;
+  text-transform: capitalize;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dashboard__cobranca {
+  font-weight: bold;
+  color: #666;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.dashboard__moeda {
+  font-weight: bold;
+  color: #444;
+  font-size: 16px;
+}
+
+.dashboard__preco {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.dashboard__box-call {
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard__box-call-btn {
+  max-width: 300px;
+  width: 100px;
+  padding: 15px 0;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  display: block;
+  background: #1E88E5;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.dashboard__box-call-number {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 16px;
+  font-family: "Lato", sans-serif;
+}
+
+.dashboard__box-description {
+  margin-top: 16px;
+  background: #fff;
+  padding: 20px;
+}
+
+.dashboard__paragrafo {
+  display: block;
+  font-family: "Lato", sans-serif;
+  white-space: pre-wrap;
+  background: #fff;
+}
+
+.dashboard__description {
+  color: #1E88E5;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.dashboard__paragrafo {
+  padding-bottom: 8px;
+  overflow: hidden;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
 }
 
 .no-margin-bottom {

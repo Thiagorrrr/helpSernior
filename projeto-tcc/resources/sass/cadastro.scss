@@ -1,4 +1,12 @@
 .cadastro {
+
+    &__container {
+        @include break-md {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
     &__type {
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
@@ -21,6 +29,13 @@
         flex-direction: column;
         align-items: center;
         margin-top: 20px;
+
+        @include break-md {
+            max-width: 400px;
+            padding: 50px;
+            margin-top: 0;
+
+        }
     }
 
     &__img {

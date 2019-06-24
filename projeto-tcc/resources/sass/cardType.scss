@@ -1,10 +1,31 @@
 .cardType {
     margin-top: 25px;
 
+    @include break-md {
+        display: flex;
+        justify-content: center;
+    }
+
     &__container {
         border-radius: 8px;
         margin-bottom: 16px;
         box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.15);
+
+        @include break-md {
+            width: 50%;
+            max-width: 400px;
+
+            transition: transform ease-in-out 200ms;
+
+            &:nth-child(odd) {
+                margin-right: 20px;
+            }
+
+            &:hover {
+                transform: scale(1.020);
+                transition: transform ease-in-out 200ms;
+            }
+        }
     }
 
     &__img {
@@ -75,6 +96,7 @@
         font-size: 16px;
         color: $grey;
         margin-bottom: 15px;
+        min-height: 32px;
     }
 
     &__btn {

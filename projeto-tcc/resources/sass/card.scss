@@ -1,0 +1,127 @@
+.card {
+    margin-bottom: 15px;
+
+    @include break-md {
+        margin-bottom: 30px;
+        max-width: 345px;
+        transition: transform ease-in-out 200ms;
+
+        &:hover {
+            transform: scale(1.020);
+            transition: transform ease-in-out 200ms;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        border-radius: 4px;
+        box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    &__funcao {
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Lato', sans-serif;
+        font-size: 18px;
+
+        color: $grey;
+        display: flex;
+        align-items: center;
+
+        &--casa,
+        &--cuidador {
+            &:before {
+                content: "";
+                display: block;
+                height: 24px;
+                margin-right: 8px;
+            }
+        }
+
+        &--cuidador {
+            &:before {
+                background: url(/images/doctor.png);
+                background-size: 100%;
+                width: 20px;
+            }
+        }
+
+        &--casa {
+            &:before {
+                background: url(/images/house.png);
+                background-size: 100%;
+                width: 22px;
+            }
+        }
+    }
+
+    &__img {
+        margin: 15px 0;
+        height: 132px;
+        width: 132px;
+        border: 1px solid #F2F2F2;
+        border-radius: 100%;
+    }
+
+    &__moeda,
+    &__preco,
+    &__cobranca,
+    &__local,
+    &__nome {
+        font-family: 'Lato', sans-serif;
+        font-size: 24px;
+        line-height: 1.1;
+        text-transform: capitalize;
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__local {
+        font-size: 16px;
+        color: #777;
+        margin: 5px 0;
+    }
+
+    &__cobranca {
+        font-weight: bold;
+        color: #666;
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    &__moeda {
+        font-weight: bold;
+        color: #444;
+        font-size: 16px;
+    }
+
+    &__preco {
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    &__btn {
+        max-width: 300px;
+        width: 100%;
+
+        padding: 15px 0;
+        margin: 0 auto;
+        text-decoration: none;
+        font-size: 20px;
+        margin-top: 15px;
+        font-weight: bold;
+        font-family: 'Lato', sans-serif;
+        text-align: center;
+        display: block;
+        background: $blue;
+        color: $white;
+        border-radius: 4px;
+    }
+}

@@ -59,7 +59,7 @@ class UsersController extends Controller
             ]);
         }
 
-        return view('users.index', compact('users'));
+        return view('templates.master', compact('users'));
     }
 
     /**
@@ -73,14 +73,32 @@ class UsersController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
-       $request = $this->service->store($request->all());
+        $links = \DB::table('table_menu')->orderBy('order', 'asc')->get();
+        if ($file = $request->file('image')) {
+            $name = $file->getClientOriginalName();
+       
+            $file->move('images', $name);
+           
+        }
+
+        $allUser = $request->all();
+        if ($file = $request->file('image')) {
+            $name = $file->getClientOriginalName();
+            $allUser['image'] = $name;
+        }
+    
+       $request = $this->service->store($allUser);
+      
+        
         if ($request['success'])
             $usuario =$request['data'];
         else
             $usuario = null;
-        return view('user.index', [
+        return view('templates.master', [
            'usuario' => $usuario,
+           'links' =>  $links,
        ]);
+       
     }
 
     /**
@@ -130,12 +148,21 @@ class UsersController extends Controller
      */
     public function update(UserUpdateRequest $request, $id)
     {
+
+ 
         try {
 
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
 
-            $user = $this->repository->update($request->all(), $id);
-
+            $allUser = $request->all();
+            if ($file = $request->file('image')) {
+                $name = $file->getClientOriginalName();
+                $allUser['image'] = $name;
+            }
+           
+            $user = $this->repository->update($allUser, $id);
+            
+        
             $response = [
                 'message' => 'User updated.',
                 'data'    => $user->toArray(),

@@ -3,12 +3,32 @@
         height: 180px;
         position: relative;
 
+        @include break-md {
+            height: 300px;
+        }
+
         &--historia {
             background: url(/images/nossa-historia-img.png);
+            background-repeat: no-repeat;
         }
 
         &--diferencial {
             background: url(/images/diferencial-img.png);
+            background-repeat: no-repeat;
+        }
+
+        @include break-md {
+            &--historia {
+                background: url(/images/nossa-historia-desktop.jpg);
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+
+            &--diferencial {
+                background: url(/images/diferencial-desktop.jpg);
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
         }
 
 

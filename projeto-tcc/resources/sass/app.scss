@@ -159,6 +159,14 @@ table {
     border-spacing: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+strong {
+    font-weight: bold;
+}
+
 .hs-container {
     padding-right: 20px;
     padding-left: 20px;
@@ -189,12 +197,16 @@ table {
 @import 'banner';
 @import 'servicos';
 @import 'cardType';
+@import 'card';
 @import 'about';
 @import 'diferencial';
 @import 'highlights';
 @import 'login';
 @import 'cadastro';
 @import 'form-padrao';
+@import 'form-buscar';
+@import 'buscar';
+@import 'dashboard';
 
 
 

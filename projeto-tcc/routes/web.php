@@ -15,10 +15,11 @@ Route::get('/', ['uses' => 'Controller@homepage']);
 Route::get('/cadastro', ['uses' => 'Controller@cadastrar']);
 Route::get('/cadastro/parceiro', ['uses' => 'Controller@cadastrarParceiro']);
 Route::get('/cadastro/cliente', ['uses' => 'Controller@cadastrarCliente']);
-// Route::get('/buscar', ['uses' => 'Controller@homepage']);
+Route::get('/buscar', ['uses' => 'Controller@buscar']);
+Route::get('/buscar/casa', ['uses' => 'Controller@buscarCasa']);
+Route::get('/buscar/cuidador', ['uses' => 'Controller@buscarCuidador']);
 
-
-Route::get('/teste/{name}', ['uses' => 'Controller@teste']);
+Route::get('/usuario/{name}/{id}', ['uses' => 'Controller@userDescription']);
 
 
 // routes to users

@@ -196,6 +196,11 @@
         overflow: visible;
 
 
+        @include break-md {
+            right: 60px;
+
+        }
+
         &--active {
             display: flex;
             z-index: 2;

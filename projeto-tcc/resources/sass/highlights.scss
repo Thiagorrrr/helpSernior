@@ -29,6 +29,10 @@
     &--about-items {
         padding: 25px 0;
 
+        @include break-md {
+            padding: 40px 0;
+        }
+
         .highlights__title {
             display: none;
         }
@@ -52,16 +56,27 @@
     &__title {
         padding-bottom: 22px;
         font-size: 32px;
+
+        @include break-md {
+            font-size: 40px;
+        }
     }
 
     &__subtitle {
         font-size: 16px;
         color: $grey;
 
+        @include break-md {
+            font-size: 18px;
+        }
+
         &--fornecedor,
         &--cadastro {
             font-size: 20px;
 
+            @include break-md {
+                font-size: 24px;
+            }
         }
 
         &--cadastro {

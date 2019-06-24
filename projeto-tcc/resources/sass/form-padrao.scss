@@ -3,6 +3,10 @@
     flex-direction: column;
     padding-bottom: 40px;
 
+    @include break-md {
+        max-width: 768px;
+
+    }
 
     &__input {
         width: 100%;
@@ -13,6 +17,31 @@
         font-family: 'Lato', sans-serif;
         font-size: 16px;
         border: 1px solid rgba(112, 112, 112, 0.3);
+    }
+
+    &__input-date-text {
+        display: inline-block;
+        font-family: "Lato", sans-serif;
+        font-size: 16px;
+        margin: 15px 0;
+    }
+
+    &__input-date {
+        .form-padrao__input {
+            background: $white;
+        }
+    }
+
+    &__text-area-info {
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+        color: $blue;
+        margin-bottom: 25px;
+    }
+
+    &__text-area {
+        padding-top: 20px;
+        min-height: 255px;
     }
 
     &__submit {
@@ -128,8 +157,14 @@
 
     &__select {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         padding: 25px 0;
+
+        @include break-md {
+            width: 40%;
+
+        }
     }
 
     &__select-input {
@@ -152,15 +187,14 @@
 
     &__file {
         input {
-            border: 1px solid $blue;
             font-family: 'Lato', sans-serif;
             font-size: 14px;
             color: $blue;
-            padding: 12px 0 12px 10px;
+            padding: 12px 0 12px 0;
             background: $white;
             border-radius: 4px;
+            letter-spacing: -0.8px;
 
-            width: 135px;
 
         }
 
